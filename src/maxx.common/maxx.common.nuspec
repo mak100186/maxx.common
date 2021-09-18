@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>maxx.common</id>
+    <version>0.0.0</version>
+    <authors>Maxx Technologies</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+	<license type="expression">MIT</license>
+    <description>maxx.common class library contains numerous handy and nifty methods used in web api development</description>
+    <dependencies>
+      <group targetFramework="net5.0">
+		<dependency id="Microsoft.ApplicationInsights" version="2.18.0" exclude="Build,Analyzers" />
+		<dependency id="Microsoft.AspNetCore.Http" version="2.2.2" exclude="Build,Analyzers" />
+		<dependency id="Microsoft.AspNetCore.Http.Abstractions" version="2.2.0" exclude="Build,Analyzers" />
+		<dependency id="Microsoft.AspNetCore.Http.Extensions" version="2.2.0" exclude="Build,Analyzers" />
+		<dependency id="Microsoft.AspNetCore.Http.Features" version="5.0.10" exclude="Build,Analyzers" />
+		<dependency id="Microsoft.Extensions.Configuration" version="5.0.0" exclude="Build,Analyzers" />
+		<dependency id="Microsoft.Extensions.Configuration.Abstractions" version="5.0.0" exclude="Build,Analyzers" />
+		<dependency id="Microsoft.Extensions.Configuration.Json" version="5.0.0" exclude="Build,Analyzers" />
+		<dependency id="Microsoft.IdentityModel.Tokens" version="6.12.2" exclude="Build,Analyzers" />
+		<dependency id="Newtonsoft.Json" version="13.0.1" exclude="Build,Analyzers" />
+		<dependency id="ObjectsComparer" version="1.4.1" exclude="Build,Analyzers" />
+		<dependency id="Pluralize.NET.Core" version="1.0.0" exclude="Build,Analyzers" />
+		<dependency id="Unity" version="5.11.10" exclude="Build,Analyzers" />        
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\Release\net5.0\maxx.common.dll" target="lib\net5.0" />
+  </files>  
+</package>

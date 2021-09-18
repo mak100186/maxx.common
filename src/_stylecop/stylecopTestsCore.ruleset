@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="ME StyleCop Tests Rule Set Core" Description="StyleCop Settings for Maxx Edge Tests Core Projects" ToolsVersion="15.0">
+  <Rules AnalyzerId="Microsoft.CodeAnalysis.CSharp" RuleNamespace="Microsoft.CodeAnalysis.CSharp">
+    <Rule Id="CS1591" Action="None" />
+  </Rules>
+  <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
+    <Rule Id="SA1027" Action="None" />
+    <Rule Id="SA1101" Action="None" />
+    <Rule Id="SA1309" Action="None" />
+    <Rule Id="SA1600" Action="None" />
+    <Rule Id="SA1633" Action="None" />
+    <Rule Id="SA1516" Action="None" />
+    <Rule Id="SA1649" Action="None" />
+    <Rule Id="SA1400" Action="None" />
+    <Rule Id="SA1502" Action="None" />
+    <Rule Id="SA1012" Action="None" />
+    <Rule Id="SA1009" Action="None" />
+    <Rule Id="SA1013" Action="None" />
+	<Rule Id="SA1210" Action="None" />
+  </Rules>
+</RuleSet>

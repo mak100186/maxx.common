@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- File name extension must be .runsettings -->
+<RunSettings>
+	<RunConfiguration>
+		<TargetPlatform>x64</TargetPlatform>
+		<TargetFrameworkVersion>FrameworkCore10</TargetFrameworkVersion>
+	</RunConfiguration>
+	<DataCollectionRunSettings>
+		<DataCollectors>
+			<DataCollector friendlyName="Code Coverage" uri="datacollector://Microsoft/CodeCoverage/2.0" assemblyQualifiedName="Microsoft.VisualStudio.Coverage.DynamicCoverageDataCollector, Microsoft.VisualStudio.TraceCollector, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+				<Configuration>
+					<CodeCoverage>
+						<ModulePaths>
+							<Exclude>
+								<ModulePath>.*tests.dll</ModulePath>
+								<ModulePath>.*testscommon.dll</ModulePath>
+								<ModulePath>.*unit.runner.reporters.netcoreapp10.dll</ModulePath>
+								<ModulePath>.*xunit.runner.utility.netcoreapp10.dll</ModulePath>
+								<ModulePath>.*xunit.runner.visualstudio.dotnetcore.testadapter.dll</ModulePath>
+								<ModulePath>.*xunit.execution.dotnet.dll</ModulePath>
+								<ModulePath>.*xunit.core.dll</ModulePath>
+								<ModulePath>.*xunit.assert.dll</ModulePath>
+								<ModulePath>.*stackexchange.redis.dll</ModulePath>
+								<ModulePath>.*pipelines.sockets.unofficial.dll</ModulePath>
+								<ModulePath>.*fluentvalidation.dll</ModulePath>
+								<ModulePath>.*cronos.dll</ModulePath>
+							</Exclude>
+						</ModulePaths>
+						<Sources>
+							<Exclude>
+								<Source>.*\\submodules\\.*</Source>
+								<Source>.*\\Constants.*</Source>
+								<Source>.*\\ErrorCodes.*</Source>
+							</Exclude>
+						</Sources>
+						<Attributes>
+							<Exclude>
+								<Attribute>^maxx\.common\.Attributes.ExcludeFromCodeCoverageAttribute$</Attribute>
+							</Exclude>
+						</Attributes>
+
+						<UseVerifiableInstrumentation>False</UseVerifiableInstrumentation>
+						<AllowLowIntegrityProcesses>True</AllowLowIntegrityProcesses>
+						<CollectFromChildProcesses>True</CollectFromChildProcesses>
+						<CollectAspDotNet>False</CollectAspDotNet>
+					</CodeCoverage>
+				</Configuration>
+			</DataCollector>
+		</DataCollectors>
+	</DataCollectionRunSettings>
+</RunSettings>
