@@ -5,6 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Models\**" />
+    <Compile Remove="Readers\**" />
+    <EmbeddedResource Remove="Models\**" />
+    <EmbeddedResource Remove="Readers\**" />
+    <None Remove="Models\**" />
+    <None Remove="Readers\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights" Version="2.18.0" />
     <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
@@ -18,11 +27,6 @@
     <PackageReference Include="ObjectsComparer" Version="1.4.1" />
     <PackageReference Include="Pluralize.NET.Core" Version="1.0.0" />
     <PackageReference Include="Unity" Version="5.11.10" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="Readers\" />
   </ItemGroup>
 
 </Project>

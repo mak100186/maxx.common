@@ -36,7 +36,7 @@ namespace maxx.common.tests.Helper
 		[InlineData(23.45, "Decimal")]
 		public void NoExceptionWhenNotNull(object objectValue, string objectName)
 		{
-			Check.ThatCode(value: () => { ExceptionHelper.ThrowExceptionIfNull(objectToBechecked: objectValue, nameOfObject: objectName); }).DoesNotThrow();
+			Check.ThatCode(value: () => { ExceptionHelper.ThrowIfNull(objectToBechecked: objectValue, nameOfObject: objectName); }).DoesNotThrow();
 		}
 
 		/// <summary>
@@ -52,7 +52,7 @@ namespace maxx.common.tests.Helper
 		public void ArgumentNullExceptionWhenNull(object objectValue, string objectName)
 		{
 			var expectedMessage = $"Value cannot be null. (Parameter '{objectName}')";
-			Check.ThatCode(value: () => { ExceptionHelper.ThrowExceptionIfNull(objectToBechecked: objectValue, nameOfObject: objectName); }).Throws<ArgumentNullException>().WithMessage(exceptionMessage: expectedMessage);
+			Check.ThatCode(value: () => { ExceptionHelper.ThrowIfNull(objectToBechecked: objectValue, nameOfObject: objectName); }).Throws<ArgumentNullException>().WithMessage(exceptionMessage: expectedMessage);
 		}
 
 		/// <summary>
@@ -67,7 +67,7 @@ namespace maxx.common.tests.Helper
 		{
 			var expectedMessage = $"Value cannot be null.{Environment.NewLine}Parameter name: {stringValue}";
 
-			Check.ThatCode(value: () => { ExceptionHelper.ThrowExceptionIfNullOrWhiteSpace(stringToBechecked: stringValue, nameOfString: nameof(stringValue)); }).Throws<ArgumentNullException>().WithProperty(propertyName: "ParamName", propertyValue: nameof(stringValue));
+			Check.ThatCode(value: () => { ExceptionHelper.ThrowIfNullOrWhiteSpace(stringToBechecked: stringValue, nameOfString: nameof(stringValue)); }).Throws<ArgumentNullException>().WithProperty(propertyName: "ParamName", propertyValue: nameof(stringValue));
 		}
 
 		/// <summary>
@@ -84,7 +84,7 @@ namespace maxx.common.tests.Helper
 		{
 			var expectedMessage = $"Value cannot be null.{Environment.NewLine}Parameter name: {stringValue}";
 
-			Check.ThatCode(value: () => { ExceptionHelper.ThrowExceptionIfNullOrWhiteSpace(stringToBechecked: stringValue, nameOfString: nameof(stringValue), exceptionMessage: errorMessage); }).Throws<Exception>().WithMessage(exceptionMessage: errorMessage);
+			Check.ThatCode(value: () => { ExceptionHelper.ThrowIfNullOrWhiteSpace(stringToBechecked: stringValue, nameOfString: nameof(stringValue), exceptionMessage: errorMessage); }).Throws<Exception>().WithMessage(exceptionMessage: errorMessage);
 		}
 
 
@@ -97,7 +97,7 @@ namespace maxx.common.tests.Helper
 		[InlineData("Mary")]
 		public void NoExceptionWhenStringHasAValue(string stringValue)
 		{
-			Check.ThatCode(value: () => { ExceptionHelper.ThrowExceptionIfNullOrWhiteSpace(stringToBechecked: stringValue, nameOfString: nameof(stringValue)); }).DoesNotThrow();
+			Check.ThatCode(value: () => { ExceptionHelper.ThrowIfNullOrWhiteSpace(stringToBechecked: stringValue, nameOfString: nameof(stringValue)); }).DoesNotThrow();
 		}
 
 		/// <summary>
@@ -111,7 +111,7 @@ namespace maxx.common.tests.Helper
 		{
 			const string nameOfList = "test list";
 
-			Check.ThatCode(value: () => { ExceptionHelper.ThrowExceptionIfNullOrEmpty(listToBeChecked: null, nameOfList: nameOfList, exceptionMessage: exceptionMessage); }).Throws<ArgumentNullException>()
+			Check.ThatCode(value: () => { ExceptionHelper.ThrowIfNullOrEmpty(listToBeChecked: null, nameOfList: nameOfList, exceptionMessage: exceptionMessage); }).Throws<ArgumentNullException>()
 					.WithMessage(exceptionMessage: new ArgumentNullException(paramName: exceptionMessage ?? nameOfList).Message);
 		}
 
@@ -127,7 +127,7 @@ namespace maxx.common.tests.Helper
 			const string nameOfList = "test list";
 			var listToBeChecked = new List<int>();
 
-			Check.ThatCode(value: () => { ExceptionHelper.ThrowExceptionIfNullOrEmpty(listToBeChecked: listToBeChecked, nameOfList: nameOfList, exceptionMessage: exceptionMessage); }).Throws<ArgumentException>().WithMessage(exceptionMessage: exceptionMessage ?? nameOfList);
+			Check.ThatCode(value: () => { ExceptionHelper.ThrowIfNullOrEmpty(listToBeChecked: listToBeChecked, nameOfList: nameOfList, exceptionMessage: exceptionMessage); }).Throws<ArgumentException>().WithMessage(exceptionMessage: exceptionMessage ?? nameOfList);
 		}
 
 		/// <summary>
@@ -139,7 +139,7 @@ namespace maxx.common.tests.Helper
 			Check.ThatCode(value: () =>
 			{
 				int? variable = null;
-				ExceptionHelper.ThrowExceptionIfNull(objectToBechecked: variable, nameOfObject: nameof(variable));
+				ExceptionHelper.ThrowIfNull(objectToBechecked: variable, nameOfObject: nameof(variable));
 			}).Throws<ArgumentNullException>().WithProperty(propertyName: "ParamName", propertyValue: "variable");
 		}
 
@@ -152,7 +152,7 @@ namespace maxx.common.tests.Helper
 			Check.ThatCode(value: () =>
 			{
 				string variable = null;
-				ExceptionHelper.ThrowExceptionIfNull(objectToBechecked: variable, nameOfObject: nameof(variable));
+				ExceptionHelper.ThrowIfNull(objectToBechecked: variable, nameOfObject: nameof(variable));
 			}).Throws<ArgumentNullException>().WithProperty(propertyName: "ParamName", propertyValue: "variable");
 		}
 
@@ -165,7 +165,7 @@ namespace maxx.common.tests.Helper
 			const string nameOfList = "test list";
 			var listToBeChecked = new List<string> { "1", "2", "3" };
 
-			Check.ThatCode(value: () => { ExceptionHelper.ThrowExceptionIfNullOrEmpty(listToBeChecked: listToBeChecked, nameOfList: nameOfList); }).DoesNotThrow();
+			Check.ThatCode(value: () => { ExceptionHelper.ThrowIfNullOrEmpty(listToBeChecked: listToBeChecked, nameOfList: nameOfList); }).DoesNotThrow();
 		}
 	}
 }

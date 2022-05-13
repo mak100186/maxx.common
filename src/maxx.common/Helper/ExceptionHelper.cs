@@ -27,7 +27,7 @@ namespace maxx.common.Helper
 		/// <param name="objectToBechecked">the object that needs to be checked for null</param>
 		/// <param name="nameOfObject">name of the object</param>
 		/// <exception cref="System.ArgumentNullException"></exception>
-		public static void ThrowExceptionIfNull(object objectToBechecked, string nameOfObject)
+		public static void ThrowIfNull(object objectToBechecked, string nameOfObject)
 		{
 			if (objectToBechecked == null)
 			{
@@ -44,7 +44,7 @@ namespace maxx.common.Helper
 		/// <param name="exceptionMessage">Optional. Alternative error message to be injected into the Exception</param>
 		/// <exception cref="System.ArgumentNullException"></exception>
 		/// <exception cref="System.ArgumentException"></exception>
-		public static void ThrowExceptionIfNullOrEmpty(IList listToBeChecked, string nameOfList, string exceptionMessage = null)
+		public static void ThrowIfNullOrEmpty(IList listToBeChecked, string nameOfList, string exceptionMessage = null)
 		{
 			if (listToBeChecked == null)
 			{
@@ -65,7 +65,7 @@ namespace maxx.common.Helper
 		/// <param name="exceptionMessage">Optional. Alternative error message to be injected into the Exception</param>
 		/// <exception cref="System.ArgumentNullException"></exception>
 		/// <exception cref="System.ArgumentException"></exception>
-		public static void ThrowExceptionIfNullOrWhiteSpace(string stringToBechecked, string nameOfString, string exceptionMessage = null)
+		public static void ThrowIfNullOrWhiteSpace(string stringToBechecked, string nameOfString, string exceptionMessage = null)
 		{
 			if (string.IsNullOrWhiteSpace(value: stringToBechecked))
 			{

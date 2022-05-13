@@ -35,9 +35,8 @@ namespace maxx.common.Extensions
 			where TAttribute : Attribute
 		{
 			type.GetTypeInfo().GetCustomAttribute(attributeType: typeof(TAttribute), inherit: true);
-			var att = type.GetTypeInfo().GetCustomAttribute(attributeType: typeof(TAttribute), inherit: true) as TAttribute;
 
-			if (att != null)
+            if (type.GetTypeInfo().GetCustomAttribute(attributeType: typeof(TAttribute), inherit: true) is TAttribute att)
 			{
 				return valueSelector(arg: att);
 			}
